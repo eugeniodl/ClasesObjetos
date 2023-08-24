@@ -49,20 +49,20 @@
             this.cboProducto = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lvDetalle = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lvEstadisticas = new System.Windows.Forms.ListView();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,7 +147,7 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(614, 128);
+            this.txtFecha.Location = new System.Drawing.Point(614, 122);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(150, 31);
             this.txtFecha.TabIndex = 9;
@@ -192,6 +192,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtCantidad
             // 
@@ -203,7 +204,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(404, 27);
+            this.label11.Location = new System.Drawing.Point(404, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 25);
             this.label11.TabIndex = 4;
@@ -228,11 +229,17 @@
             // cboProducto
             // 
             this.cboProducto.FormattingEnabled = true;
+            this.cboProducto.Items.AddRange(new object[] {
+            "PS5 + 1 MANDO DS5",
+            "PS4 (1TB) + 1 MANDO DS4",
+            "MANDO PS5 / DS5",
+            "MANDO PS4 / DS4"});
             this.cboProducto.Location = new System.Drawing.Point(20, 68);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(191, 33);
             this.cboProducto.TabIndex = 1;
             this.cboProducto.Text = "(Seleccione)";
+            this.cboProducto.SelectedIndexChanged += new System.EventHandler(this.cboProducto_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -258,6 +265,26 @@
             this.lvDetalle.UseCompatibleStateImageBehavior = false;
             this.lvDetalle.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "CANTIDAD";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "DESCRIPCIÓN";
+            this.columnHeader2.Width = 360;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "PREC. UNIT.";
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "IMPORTE";
+            this.columnHeader4.Width = 120;
+            // 
             // btnRegistrar
             // 
             this.btnRegistrar.Location = new System.Drawing.Point(15, 511);
@@ -266,6 +293,7 @@
             this.btnRegistrar.TabIndex = 14;
             this.btnRegistrar.Text = "REGISTRAR BOLETA";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // label12
             // 
@@ -310,35 +338,6 @@
             this.lvEstadisticas.UseCompatibleStateImageBehavior = false;
             this.lvEstadisticas.View = System.Windows.Forms.View.Details;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(16, 732);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(112, 34);
-            this.btnSalir.TabIndex = 19;
-            this.btnSalir.Text = "SALIR";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "CANTIDAD";
-            this.columnHeader1.Width = 120;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "DESCRIPCIÓN";
-            this.columnHeader2.Width = 360;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "PREC. UNIT.";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "IMPORTE";
-            this.columnHeader4.Width = 120;
-            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "NUM. BOLETA";
@@ -358,6 +357,15 @@
             // 
             this.columnHeader8.Text = "MONTO TOTAL";
             this.columnHeader8.Width = 240;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(16, 732);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(112, 34);
+            this.btnSalir.TabIndex = 19;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
             // frmBoleta
             // 
@@ -386,6 +394,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmBoleta";
             this.Text = "Control de venta";
+            this.Load += new System.EventHandler(this.frmBoleta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
