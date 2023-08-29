@@ -163,5 +163,26 @@ namespace BoletaVenta
             }
             return total;
         }
+
+        private void lvDetalle_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ListViewItem item = lvDetalle.GetItemAt(e.X, e.Y);
+            string producto = lvDetalle.Items[item.Index].SubItems[1].Text;
+            DialogResult r = MessageBox.Show("¿Está seguro de eliminar el producto > " + producto + "?",
+                "Boleta", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (r == DialogResult.Yes)
+            {
+                lvDetalle.Items.Remove(item);
+                lblTotal.Text = DeterminaTotal().ToString("C");
+                MessageBox.Show("¡Detalle eliminado correctamente!");
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("¿Está seguro de salir?", "Boleta",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (r == DialogResult.Yes) this.Close();
+        }
     }
 }
