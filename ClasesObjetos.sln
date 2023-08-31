@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaAnotaciones", "Prueba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pjPruebaAnotaciones", "pjPruebaAnotaciones\pjPruebaAnotaciones.csproj", "{A738AE05-0588-4763-9D4B-BAD3262BF95A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaMetodosExtension", "PruebaMetodosExtension\PruebaMetodosExtension.csproj", "{7B673795-2D1C-487F-B19D-A6ACFC16E570}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A738AE05-0588-4763-9D4B-BAD3262BF95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A738AE05-0588-4763-9D4B-BAD3262BF95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A738AE05-0588-4763-9D4B-BAD3262BF95A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B673795-2D1C-487F-B19D-A6ACFC16E570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B673795-2D1C-487F-B19D-A6ACFC16E570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B673795-2D1C-487F-B19D-A6ACFC16E570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B673795-2D1C-487F-B19D-A6ACFC16E570}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
