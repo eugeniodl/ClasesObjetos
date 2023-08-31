@@ -2,14 +2,19 @@
 
 // Step 1 create object
 Modelo.Customer obj = new();
-obj.FirstName = "RENE DE LOS SANTOS";
+obj.FirstName = "";
 
 // Step 2
 var context = new ValidationContext(obj, null, null);
 
 // Step 3
-bool IsValid = Validator.TryValidateObject(obj, context, null, true);
+var result = new List<ValidationResult>();
+bool IsValid = Validator.TryValidateObject(obj, context, result, true);
 Console.WriteLine(IsValid);
+foreach (var item in result)
+{
+    Console.WriteLine(item.ErrorMessage);
+}
 
 /*************************************************************/
 
@@ -22,10 +27,10 @@ objProduct.Price = 20;
 var contextP = new ValidationContext(objProduct, null, null);
 
 // Step 3
-var result = new List<ValidationResult>();
-bool IsValidP = Validator.TryValidateObject(objProduct, contextP, result, true);
+var resultP = new List<ValidationResult>();
+bool IsValidP = Validator.TryValidateObject(objProduct, contextP, resultP, true);
 Console.WriteLine(IsValidP);
-foreach(var p in result)
+foreach(var p in resultP)
 {
     Console.WriteLine(p.ErrorMessage);
 }
