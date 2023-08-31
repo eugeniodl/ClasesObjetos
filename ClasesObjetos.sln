@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pjPruebaAnotaciones", "pjPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaMetodosExtension", "PruebaMetodosExtension\PruebaMetodosExtension.csproj", "{7B673795-2D1C-487F-B19D-A6ACFC16E570}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaClaseParcial", "PruebaClaseParcial\PruebaClaseParcial.csproj", "{FF231341-8CC0-4E10-B048-D013E46882EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{7B673795-2D1C-487F-B19D-A6ACFC16E570}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B673795-2D1C-487F-B19D-A6ACFC16E570}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B673795-2D1C-487F-B19D-A6ACFC16E570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF231341-8CC0-4E10-B048-D013E46882EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF231341-8CC0-4E10-B048-D013E46882EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF231341-8CC0-4E10-B048-D013E46882EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF231341-8CC0-4E10-B048-D013E46882EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
