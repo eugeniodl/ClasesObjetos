@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Estaciones
+    public class Estaciones : IEnumerable
     {
         Estacion _verano;
         public Estacion Verano
@@ -52,6 +53,51 @@ namespace Modelo
             public byte MesFin { get => mesFin; set => mesFin = value; }
             public byte DiaInicio { get => diaInicio; set => diaInicio = value; }
             public byte DiaFin { get => diaFin; set => diaFin = value; }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return new Enumerador();
+        }
+
+        private class Enumerador : IEnumerator
+        {
+            byte estacionActual = 0;
+            Estaciones e = new Estaciones();
+            public object Current => ObtenerEstacionActual(estacionActual);
+
+            private Estacion ObtenerEstacionActual(byte estacionActual)
+            {
+                Estacion Resultado = null;
+                switch(estacionActual)
+                {
+                    case 1:
+                        Resultado = e.Verano;
+                        break;
+                    case 2:
+                        Resultado = e.Invierno;
+                        break;
+                }
+                return Resultado;
+            }
+
+            public bool MoveNext()
+            {
+                bool resultado;
+                if(estacionActual == 2)
+                    resultado = false;
+                else
+                {
+                    estacionActual++;
+                    resultado = true;
+                }
+                return resultado;
+            }
+
+            public void Reset()
+            {
+                estacionActual = 0;
+            }
         }
     }
 }
